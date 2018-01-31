@@ -6,7 +6,9 @@ import { ShoppingListComponent } from './shopping-list/shopping-list.component';
 import { RouterModule } from '@angular/router';
 const appRoute: Routes = [
     { path: '', redirectTo: '/recipes', pathMatch: 'full'},
-    { path: 'recipes', component: RecipesComponent},
+    { path: 'recipes', component: RecipesComponent, children: [
+        { path: '', component: }
+    ]},
     { path: 'shopping-list', component: ShoppingListComponent}
 ];
 @NgModule({
