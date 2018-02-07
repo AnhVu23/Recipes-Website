@@ -1,8 +1,7 @@
 import { RecipeService } from '../../recipes/recipe.service';
 import { Component } from '@angular/core';
-import { Response } from '@angular/http';
 import { DataStorageService } from '../../shared/data-storage.service';
-import {AuthService} from "../../auth/auth.service";
+import {AuthService} from '../../auth/auth.service';
 
 @Component({
   selector: 'app-header',
@@ -14,15 +13,15 @@ export class HeaderComponent {
               private authService: AuthService) { }
   onSaveData() {
     this.dataStorageService.storeRecipes().subscribe(
-      (response: Response) => {
+      response => {
         console.log(response);
       }
     );
   }
 
   onFetchData() {
-    this.dataStorageService.getRecipes().
-      subscribe(
+    this.dataStorageService.getRecipes()
+      .subscribe(
       response => this.modifyRecipe(response)
       );
   }
