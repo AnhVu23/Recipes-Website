@@ -1,9 +1,8 @@
-import { Recipe } from './../recipes/recipe.model';
+
 import { Injectable } from '@angular/core';
 import {HttpClient, HttpHeaders, HttpParams} from '@angular/common/http';
 import { RecipeService } from '../recipes/recipe.service';
-import { Response } from '@angular/http';
-import {AuthService} from "../auth/auth.service";
+import {AuthService} from '../auth/auth.service';
 
 @Injectable()
 export class DataStorageService {
